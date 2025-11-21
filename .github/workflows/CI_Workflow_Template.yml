@@ -46,4 +46,6 @@ jobs:
           webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
           status: 'success'
           service: 'backend-api'
+          author: 'Jiale'
+          commit-message: 'Done by Jiale'
           message: 'Done by Jiale'
