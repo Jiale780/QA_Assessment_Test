@@ -39,10 +39,12 @@ jobs:
     if: always()
     needs: [test]
     steps:
-      # TODO: Add Discord notification steps here
-      # Hint: Use a Discord webhook action or curl
-      - name: Discord Notification
-        uses: tenzin1308/discord-notification@v1.0.0
+      - name: Send Discord notification
+        uses: stegzilla/discord-notify@v2
         with:
-          discord-webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          message: 'Done by Jiale'
+          webhook_url: https://discord.com/api/webhooks/1441330277279469578/DsysO-Ce_53G5q8Nw8-PBZi9M5P4Hd9SHdcfDa8qEKrGCmqwVZQDPN8j8y8V3WYfaQl0
+          title: New PR opened
+          message: "**${{ github.event.pull_request.title }}**\n**Creator:** ${{ github.event.pull_request.user.login }}\n${{ github.event.pull_request.html_url }}"
+          include_image: true
+          avatar_url: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+          username: GitHub PR Notifier
