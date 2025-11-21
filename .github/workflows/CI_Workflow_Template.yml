@@ -43,7 +43,7 @@ jobs:
         uses: Retr0-01/better-discord-notification@main
         with:
           webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }} # It is recommended to store your webhooks using actions secrets
-          msg-content: '@everyone Testing by Jiale'
+          msg-content: 'CI Workflow of the QA Assessment Done Testing by Jiale'
           embed-color: '3093151'
           footer-icon: 'https://cdn.discordapp.com/attachments/712252851283296260/961953852897255454/706526933973860412.png'
           ignore-hidden: 'false'
