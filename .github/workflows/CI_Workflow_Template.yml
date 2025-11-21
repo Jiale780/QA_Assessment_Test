@@ -39,13 +39,10 @@ jobs:
     if: always()
     needs: [test]
     steps:
-      - name: Notify deployment success of Discord Notification
-        if: success()
-        uses: opper-ai/discord-build-notifications@v1
+      - name: send message
+        uses: appleboy/discord-action@v1.2.0
         with:
-          webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          status: 'success'
-          service: 'backend-api'
-          author: 'Jiale'
-          commit-message: 'Done by Jiale'
-          message: 'Done by Jiale'
+          webhook_id: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          color: '#48f442'
+          username: 'GitHub Bot'
+          message: 'A new commit has been pushed with custom color by Jiale.'
